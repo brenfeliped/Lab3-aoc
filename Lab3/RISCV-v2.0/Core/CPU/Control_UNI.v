@@ -10,7 +10,10 @@
  module Control_UNI(
     input  [31:0] iInstr,
 	 input         iExceptionLoad,
-	 input         iExceptionStore, 
+	 input         iExceptionStore,
+	 input         iPcMisaligned,
+	 input         iOutText,
+	 input         iOutData, 
     output    	 	oOrigAULA, 
 	 output 			oOrigBULA, 
 	 output			oRegWrite, 
@@ -18,7 +21,9 @@
 	 output			oMemRead,
 	 output        oPcOrUtvec,   // sinal de controle para escolher PC ou Utvec
 	 output        oCSRWrite,    // sinal para escrita no banco de registradores CSR 
-	 output [31:0] oUcause,      // valor para ser gravado no Ucause 
+	 output [31:0] oUcause,      // valor para ser gravado no Ucause
+	 output        oSelectNumRegCSR,  // sinal de selecao do numero do registrador csr
+	 output  [2:0] oOrigWriteDataCSR, // sinal para selecao do dado a ser excrito em CSR
 	 output [ 1:0]	oMem2Reg, 
 	 output [ 1:0]	oOrigPC,
 	 output [ 4:0] oALUControl
@@ -35,7 +40,7 @@
 );
 
 
-wire [6:0] Opcode = iInstr[ 6: 0];
+wire [6:0] Opcode = iPcMisaligned ? OPC_PCEXC : iInstr[ 6: 0];
 wire [2:0] Funct3	= iInstr[14:12];
 wire [6:0] Funct7	= iInstr[31:25];
 `ifdef RV32IMF
@@ -44,19 +49,157 @@ wire [4:0] Rs2    = iInstr[24:20]; // Para os converts de ponto flutuante
 
 
 always @(*)
+if(iOutText == 1)
+begin
+            oOrigAULA  	<= 1'b0;
+				oOrigBULA 	<= 1'b0;
+				oRegWrite	<= 1'b0;
+				oMemWrite	<= 1'b0; 
+				oMemRead 	<= 1'b0; 
+				oALUControl	<= OPNULL;
+				oMem2Reg 	<= 2'b00;
+				oOrigPC		<= 2'b00;
+				oPcOrUtvec  <= 1'b1; // *add to CSR registers*
+				oCSRWrite   <= 1'b1; // *add to CSR registers*
+				oUcause     <= 32'h00000001;  // *add to CSR registers*
+				oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+				oOrigWriteDataCSR <= 3'b001;    // *add to CSR registers*
+end
+else
+begin
 	case(Opcode)
+	   OPC_PCEXC: // exercao de endereco de instrucao desaliado 
+		   begin
+			   oOrigAULA  	<= 1'b0;
+				oOrigBULA 	<= 1'b0;
+				oRegWrite	<= 1'b0;
+				oMemWrite	<= 1'b0; 
+				oMemRead 	<= 1'b0; 
+				oALUControl	<= OPNULL;
+				oMem2Reg 	<= 2'b00;
+				oOrigPC		<= 2'b00;
+				oPcOrUtvec  <= 1'b1; // *add to CSR registers*
+				oCSRWrite   <= 1'b1; // *add to CSR registers*
+				oUcause     <= 32'h00000000;  // *add to CSR registers*
+				oSelectNumRegCSR <= 1'b1;     // *add to CSR registers*
+				oOrigWriteDataCSR <= 3'b001;    // *add to CSR registers*
+			end
+		OPC_CSR:
+			begin
+			//oOrigAULA  	<= 1'b0; dont care
+			//oOrigBULA 	<= 1'b0; dont care
+			//oRegWrite	<= 1'b0; depende de cada instrucao
+			oMemWrite	<= 1'b0; 
+			oMemRead 	<= 1'b0; 
+			oALUControl	<= OPNULL;
+			oOrigPC		<= 2'b00; //depende de cada instrucao
+				case(Funct3)
+					FUNCT3_ECALL:
+						begin
+							oPcOrUtvec  <= 1'b1; // *add to CSR registers*
+							oRegWrite	<= 1'b0;
+							oMem2Reg 	<= 2'b00;
+							oCSRWrite   <= 1'b1; // *add to CSR registers*
+							oUcause     <= 32'h00000008;  // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b1;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b001;    // *add to CSR registers*
+						end
+					FUNCT3_CSRRW:
+						begin
+							oPcOrUtvec  <= 1'b0; // *add to CSR registers*
+							oRegWrite	<= 1'b1;
+							oMem2Reg 	<= 2'b11;
+							oCSRWrite   <= 1'b1; // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b0;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b011;    // *add to CSR registers*
+						end
+					FUNCT3_CSRRS:
+					    begin
+							oPcOrUtvec  <= 1'b0; // *add to CSR registers*
+							oRegWrite	<= 1'b1;
+							oMem2Reg 	<= 2'b11;
+							oCSRWrite   <= 1'b1; // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b0;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b100;    // *add to CSR registers*
+						 end
+					FUNCT3_CSRRC:
+					    begin
+							oPcOrUtvec  <= 1'b0; // *add to CSR registers*
+							oRegWrite	<= 1'b1;
+							oMem2Reg 	<= 2'b11;
+							oCSRWrite   <= 1'b1; // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b0;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b101;    // *add to CSR registers*
+						 end
+					FUNCT3_CSRRWI:
+					    begin
+							oPcOrUtvec  <= 1'b0; // *add to CSR registers*
+							oRegWrite	<= 1'b1;
+							oCSRWrite   <= 1'b1; // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b0;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b000;    // *add to CSR registers*
+						 end
+					FUNCT3_CSRRSI:
+					   begin
+							oPcOrUtvec  <= 1'b0; // *add to CSR registers*
+							oRegWrite	<= 1'b1;
+							oCSRWrite   <= 1'b1; // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b0;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b110;    // *add to CSR registers*
+						end
+					FUNCT3_CSRRCI:
+					   begin
+							oPcOrUtvec  <= 1'b0; // *add to CSR registers*
+							oRegWrite	<= 1'b1;
+							oCSRWrite   <= 1'b1; // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b0;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b111;    // *add to CSR registers*
+						end
+				endcase
+			end
 		OPC_LOAD:
 			begin
 				oOrigAULA	<= 1'b0;
 				oOrigBULA 	<= 1'b1;
-				oRegWrite	<= 1'b1;
-				oMemWrite	<= 1'b0; 
-				oMemRead 	<= 1'b1; 
+				//oRegWrite	<= 1'b1; depende do aliamento do load
+				//oMemWrite	<= 1'b0; depende do aliamento do load 
+				//oMemRead 	<= 1'b1; depende do aliamento do load
 				oALUControl	<= OPADD;
 				oMem2Reg 	<= 2'b10;
 				oOrigPC		<= 2'b00;
-				oPcOrUtvec  <= 1'b0; 
-				oCSRWrite   <= 1'b0;
+				if(iExceptionLoad!=1)
+				begin
+				      if(iOutData != 1)
+						begin
+						   oRegWrite	<= 1'b1;
+							oMemWrite	<= 1'b0;
+							oMemRead 	<= 1'b1; 
+							oPcOrUtvec  <=  1'b0; 
+							oCSRWrite   <=  1'b0;
+						end
+						else
+						begin
+						   oRegWrite	<= 1'b0;
+							oMemWrite	<= 1'b0;
+							oMemRead 	<= 1'b0; 
+							oPcOrUtvec  <= 1'b1; // *add to CSR registers*
+							oCSRWrite   <= 1'b1; // *add to CSR registers*
+							oUcause     <= 32'h00000005;  // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b1;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b001;    // *add to CSR registers*
+						end
+				end
+				else
+				begin
+				      oRegWrite	<= 1'b0;
+						oMemWrite	<= 1'b0;
+						oMemRead 	<= 1'b0;
+						oPcOrUtvec  <= 1'b1; // *add to CSR registers*
+				      oCSRWrite   <= 1'b1; // *add to CSR registers*
+				      oUcause     <= 32'h00000004;  // *add to CSR registers*
+				      oSelectNumRegCSR <= 1'b1;     // *add to CSR registers*
+				      oOrigWriteDataCSR <= 3'b001;    // *add to CSR registers*	
+				end
 `ifdef RV32IMF
 				oFPALU2Reg    <= 1'b0;
 				oFPALUControl <= OPNULL;
@@ -111,8 +254,9 @@ always @(*)
 							oOrigPC		<= 2'b00;
 							oPcOrUtvec  <= 1'b1; // *add to CSR registers*
 							oCSRWrite   <= 1'b1; // *add to CSR registers*
-							oUcause     <= 32'h00000002  // *add to CSR registers*
-							
+							oUcause     <= 32'h00000002;  // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b1;     // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 `ifdef RV32IMF
 							oFPALU2Reg    <= 1'b0;
 							oFPALUControl <= OPNULL;
@@ -159,8 +303,31 @@ always @(*)
 				oALUControl	<= OPADD;
 				oMem2Reg 	<= 2'b00;
 				oOrigPC		<= 2'b00;
-				oPcOrUtvec  <= 1'b0; 
-				oCSRWrite   <= 1'b0;
+				if(iExceptionStore==0)
+				begin
+					if(iOutData==0)
+					begin
+						oPcOrUtvec  <= 1'b0; 
+						oCSRWrite   <= 1'b0;
+					end
+					else
+					begin
+						oPcOrUtvec  <= 1'b1; // *add to CSR registers*
+						oCSRWrite   <= 1'b1; // *add to CSR registers*
+						oUcause     <= 32'h00000007;  // *add to CSR registers*
+						oSelectNumRegCSR <= 1'b1;     // *add to CSR registers*
+						oOrigWriteDataCSR <= 3'b001;    // *add to CSR registers*
+					end
+				end
+				else
+					oPcOrUtvec  <= 1'b1; // *add to CSR registers*
+				   oCSRWrite   <= 1'b1; // *add to CSR registers*
+				   oUcause     <= 32'h00000006;  // *add to CSR registers*
+				   oSelectNumRegCSR <= 1'b1;     // *add to CSR registers*
+				   oOrigWriteDataCSR <= 3'b001;    // *add to CSR registers*
+				begin
+					
+				end
 `ifdef RV32IMF
 				oFPALU2Reg    <= 1'b0;
 				oFPALUControl <= OPNULL;
@@ -222,7 +389,9 @@ always @(*)
 								oOrigPC		<= 2'b00;
 								oPcOrUtvec  <= 1'b1; 
 							   oCSRWrite   <= 1'b1;
-								oUcause     <= 32'h00000002  // *add to CSR registers*
+								oUcause     <= 32'h00000002;  // *add to CSR registers*
+								oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+							   oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 `ifdef RV32IMF
 								oFPALU2Reg    <= 1'b0;
 								oFPALUControl <= OPNULL;
@@ -258,6 +427,9 @@ always @(*)
 								oOrigPC		<= 2'b00;
 								oPcOrUtvec  <= 1'b1; 
 							   oCSRWrite   <= 1'b1;
+								oUcause     <= 32'h00000002;  // *add to CSR registers*
+								oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+							   oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 `ifdef RV32IMF
 								oFPALU2Reg    <= 1'b0;
 								oFPALUControl <= OPNULL;
@@ -282,7 +454,9 @@ always @(*)
 						oOrigPC		<= 2'b00;
 						oPcOrUtvec  <= 1'b1; 
 						oCSRWrite   <= 1'b1;
-						oUcause     <= 32'h00000002  // *add to CSR registers*
+						oUcause     <= 32'h00000002;  // *add to CSR registers*
+						oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+						oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 `ifdef RV32IMF
 						oFPALU2Reg    <= 1'b0;
 						oFPALUControl <= OPNULL;
@@ -496,7 +670,9 @@ always @(*)
 										oWrite2Mem    <= 1'b0;
 										oPcOrUtvec  <= 1'b1; 
 									   oCSRWrite   <= 1'b1;
-										oUcause     <= 32'h00000002  // *add to CSR registers*
+										oUcause     <= 32'h00000002;  // *add to CSR registers*
+										oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+							         oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 									end
 							endcase
 						end
@@ -528,7 +704,9 @@ always @(*)
 										oWrite2Mem    <= 1'b0;
 										oPcOrUtvec  <= 1'b1; 
 										oCSRWrite   <= 1'b1;
-										oUcause     <= 32'h00000002  // *add to CSR registers*
+										oUcause     <= 32'h00000002;  // *add to CSR registers*
+										oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+							         oOrigWriteDataCSR <= 2'b10;    // *add to CSR registers*
 									end
 							endcase
 						end
@@ -561,7 +739,9 @@ always @(*)
 										oWrite2Mem    <= 1'b0;
 										oPcOrUtvec  <= 1'b1; 
 										oCSRWrite   <= 1'b1;
-										oUcause     <= 32'h00000002  // *add to CSR registers*
+										oUcause     <= 32'h00000002;
+										oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+							         oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 									end
 							endcase
 						end
@@ -593,6 +773,9 @@ always @(*)
 										oWrite2Mem    <= 1'b0;
 										oPcOrUtvec  <= 1'b1; 
 										oCSRWrite   <= 1'b1;
+										oUcause     <= 32'h00000002;
+										oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+							         oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 									end
 							endcase
 						end
@@ -624,7 +807,9 @@ always @(*)
 										oWrite2Mem    <= 1'b0;
 										oPcOrUtvec  <= 1'b1; 
 										oCSRWrite   <= 1'b1;
-										oUcause     <= 32'h00000002  // *add to CSR registers*
+										oUcause     <= 32'h00000002;  // *add to CSR registers*
+										oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+							         oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 									end
 							endcase
 						end
@@ -648,7 +833,9 @@ always @(*)
 							oFPstart		  <= 1'b0;
 							oPcOrUtvec  <= 1'b1; 
 							oCSRWrite   <= 1'b1;
-							oUcause     <= 32'h00000002  // *add to CSR registers*
+							oUcause     <= 32'h00000002;  // *add to CSR registers*
+							oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+							oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 					  end
 						
 				endcase				
@@ -714,7 +901,9 @@ always @(*)
 				oOrigPC		<= 2'b00;
 				oPcOrUtvec  <= 1'b1; 
 				oCSRWrite   <= 1'b1;
-				oUcause     <= 32'h00000002  // *add to CSR registers*
+				oUcause     <= 32'h00000002;  // *add to CSR registers*
+				oSelectNumRegCSR <= 1'b1;      // *add to CSR registers*
+				oOrigWriteDataCSR <= 3'b010;    // *add to CSR registers*
 `ifdef RV32IMF
 				oFPALU2Reg    <= 1'b0;
 				oFPALUControl <= OPNULL;
@@ -728,4 +917,5 @@ always @(*)
 		  
 	endcase
 
+end
 endmodule

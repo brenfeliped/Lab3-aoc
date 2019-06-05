@@ -35,7 +35,7 @@ begin
 	 end
     else
     begin
-       if(iREGWrite != 0)
+       if(iREGWrite)
 		 begin 
 		      registers[iNumReg] <= iWriteData;
 				registers[7'b1000010] <= iUcause; // grava a causa da exercao no reg(66) ucause

@@ -85,6 +85,7 @@ parameter
 	FOPNULL		= 5'd31, // saída EEEEEEEE
 
 /* Campo OpCode */
+   OPC_PCEXC          = 7'b0000000,
 	OPC_LOAD       	= 7'b0000011,
 	OPC_CSR           = 7'b1110011,  // * add to csr *
 	OPC_OPIMM     		= 7'b0010011,
@@ -150,7 +151,7 @@ parameter
 	FUNCT3_OR			= 3'b110,
 	FUNCT3_AND			= 3'b111,
 	
-	FUNCT3_ECALL      = 3'b000,
+	FUNCT3_ECALL      = 3'b000, // * add to csr*
    FUNCT3_CSRRW      = 3'b001,
    FUNCT3_CSRRS      = 3'b010,
    FUNCT3_CSRRC	   = 3'b011,
@@ -167,7 +168,6 @@ parameter
 	
 	FUNCT3_JALR			= 3'b000,
 
-	FUNCT3_ECALL		= 3'b000,
 
 	FUNCT3_MUL			= 3'b000,
 	FUNCT3_MULH			= 3'b001,

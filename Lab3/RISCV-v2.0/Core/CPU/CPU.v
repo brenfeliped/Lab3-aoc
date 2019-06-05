@@ -79,7 +79,9 @@ wire			 wCMemWrite;
 wire			 wCMemRead;
 wire         wCPcOrUtvec;  // *add to csr resgisters* 
 wire         wCCSRWrite;   // *add to csr resgisters* 
-wire         wCUcause;     // *add to csr resgisters* 
+wire         wCUcause;     // *add to csr resgisters*
+wire         wCSelectNumRegCSR; // *add to csr resgisters*
+wire  [2:0]  wCOrigWriteDataCSR; // *add to csr resgisters*
 wire [ 1:0]	 wCMem2Reg; 
 wire [ 1:0]	 wCOrigPC;
 wire [ 4:0]  wCALUControl;
@@ -97,7 +99,10 @@ wire 			 wCFPstart;
  Control_UNI CONTROL0 (
 	.iInstr(wInstr),
    .iExceptionLoad(wExceptionLoad),
-   .iExceptionStore(wExceptionStore),	
+   .iExceptionStore(wExceptionStore),
+   .iPcMisaligned(wPcMisaligned),
+   .iOutText(wOutText),
+	.iOutData(wOutData),
    .oOrigAULA(wCOrigAULA), 
 	.oOrigBULA(wCOrigBULA), 
 	.oRegWrite(wCRegWrite), 
@@ -106,6 +111,8 @@ wire 			 wCFPstart;
 	.oPcOrUtvec(wCPcOrUtvec),       // *add to csr resgisters*
 	.oCSRWrite(wCCSRWrite),        // *add to csr resgisters*
 	.oUcause(wCUcause),            // *add to csr resgisters*
+	.oSelectNumRegCSR(wCSelectNumRegCSR),// *add to csr resgisters*
+	.oOrigWriteDataCSR(wCOrigWriteDataCSR),// *add to csr resgisters*
 	.oMem2Reg(wCMem2Reg), 
 	.oOrigPC(wCOrigPC),
 	.oALUControl(wCALUControl)
@@ -126,9 +133,12 @@ wire 			 wCFPstart;
 
 
 // Caminho de Dados
+wire         wOutText;
+wire         wOutData;
 wire [31:0]  wInstr;
 wire  wExceptionStore;
 wire  wExceptionLoad;
+wire  wPcMisaligned = mPC[0] | mPC[1];
 Datapath_UNI DATAPATH0 (
     .iCLK(iCLK),
     .iCLK50(iCLK50),
@@ -171,6 +181,8 @@ Datapath_UNI DATAPATH0 (
 	 .wCPcOrUtvec(wCPcOrUtvec),  // *add to csr resgisters*
 	 .wCCSRWrite(wCCSRWrite),    // *add to csr resgisters*
 	 .wCUcause(wCUcause),        // *add to csr resgisters*
+	 .wCSelectNumRegCSR(wCSelectNumRegCSR), // *add to csr resgisters*
+	 .wCOrigWriteDataCSR(wCOrigWriteDataCSR), // *add to csr resgisters*
 `ifdef RV32IMF
 	 .wCFRegWrite(wCFRegWrite),    
 	 .wCFPALUControl(wCFPALUControl),
@@ -198,7 +210,9 @@ Datapath_UNI DATAPATH0 (
 	 
 	 //Sinais de Execao
 	 .oExceptionStore(wExceptionStore),
-	 .oExceptionLoad(wExceptionLoad)
+	 .oExceptionLoad(wExceptionLoad),
+	 .oOutText(wOutText),
+	 .oOutData(wOutData)
 );
  `endif
 

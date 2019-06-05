@@ -48,6 +48,8 @@ module Datapath_UNI (
 	 input         wCPcOrUtvec,  // *add to csr resgisters*
 	 input         wCCSRWrite,   // *add to csr resgisters*
 	 input [31:0]  wCUcause,     // *add to csr resgisters*
+	 input         wCSelectNumRegCSR, // *add to csr resgisters*
+	 input  [2:0]  wCOrigWriteDataCSR, // *add to csr resgisters*
 `ifdef RV32IMF
 	 input        	wCFRegWrite,    // Controla a escrita no FReg
 	 input [ 4:0] 	wCFPALUControl, // Controla a operacao a ser realizda pela FPULA
@@ -72,7 +74,9 @@ module Datapath_UNI (
 	 
 	 // Sinais de exercao
 	 output wire oExceptionStore,
-	 output wire oExceptionLoad
+	 output wire oExceptionLoad,
+	 output wire oOutText,
+    output wire oOutData
 );
 
 
@@ -88,7 +92,7 @@ assign mRead1				= wRead1;
 assign mRead2				= wRead2;
 assign mRegWrite			= wRegWrite;
 assign mULA					= wALUresult;
-assign mDebug				= 32'h000ACE10;	// Ligar onde for preciso	
+assign mDebug				=  wCUcause; //32'h000ACE10;	// Ligar onde for preciso	
 assign wRegDispSelect 	= mRegDispSelect;
 assign wVGASelect 		= mVGASelect;
 assign mRegDisp			= wRegDisp;
@@ -169,11 +173,11 @@ Registers REGISTERS0 (
 
 
 wire [31:0] wUtvec, wCSRDataout;
-CSR CSRRegisters( 
+CSRRegisters CSR0( 
    .iCLK(iCLK),
 	.iRST(iRST),
 	.iREGWrite(wCCSRWrite),
-	.iNumReg(),
+	.iNumReg(wNumReg),
 	.iWriteData(),
 	.iPC(mPC),
 	.iUcause(wCUcause),
@@ -296,10 +300,46 @@ BranchControl BC0 (
 
 
 
+always @(*)
+if(IwAddress< BEGINNING_TEXT | IwAddress > END_TEXT)
+begin
+     oOutText <= 1'b1;
+end
+else
+begin
+	oOutText <= 1'b0;
+end
 
+
+always @(*)
+if(wALUresult < BEGINNING_DATA | wALUresult > END_DATA)
+begin
+	oOutData <= 1'b1;
+end
+else
+begin
+	oOutData <= 1'b0;
+end
 // ******************************************************
-// multiplexadores	
-						  						 
+// multiplexadores
+wire [31:0] wWriteDataCSR;
+always @(*) 
+   case(wCOrigWriteDataCSR)
+	   3'b000: wWriteDataCSR <= {27'b0,wRs1}; // Imediato das instrucoes CSR, CSR= zImm
+		3'b001: wWriteDataCSR <=  IwAddress; // Pegando PC,  UTVAL = PC
+		3'b010: wWriteDataCSR <=  IwReadData; // Pegando a instrucao, UTVAL = Inst
+		3'b011: wWriteDataCSR <=  wRead1;     // CSR = R[rs1]
+		3'b100: wWriteDataCSR <= wCSRDataout |  wRead1;
+		3'b101: wWriteDataCSR <= wCSRDataout & ~wRead1;
+		3'b110: wWriteDataCSR <= wCSRDataout | {27'b0,wRs1};
+		3'b111: wWriteDataCSR <= wCSRDataout & ~{27'b0,wRs1};
+	endcase
+wire [6:0] wNumReg;	
+always @(*)
+   case(wCSelectNumRegCSR)
+	     1'b0:  wNumReg <= wImmediate[6:0]; // Numero do resgitrador utval(67)
+		  1'b1:  wNumReg <= 7'b1000011; // NUmero do registrador CSR
+   endcase	
 wire [31:0] wOrigAULA;
 always @(*)
     case(wCOrigAULA)
@@ -342,15 +382,21 @@ always @(*) // Novo fio de saida para fazer os multiplexadores em cascata
 	 
 wire [31:0] wiPC;	 
 always @(*)
-	case(wCOrigPC)
-		2'b00:     wiPC <= wPC4;												// PC+4
-      2'b01:     wiPC <= wBranch ? wBranchPC: wPC4;					// Branches
-      2'b10:     wiPC <= wBranchPC;											// jal
-      2'b11:     wiPC <= (wRead1+wImmediate) & ~(32'h000000001);	// jalr
-		default:	  wiPC <= ZERO;
-	endcase
-
-	
+   if(wCPcOrUtvec != 0)
+	begin
+		wiPC <= wUtvec;
+	end
+	else
+	begin
+		case(wCOrigPC)
+			2'b00:     wiPC <= wPC4;												// PC+4
+			2'b01:     wiPC <= wBranch ? wBranchPC: wPC4;					// Branches
+			2'b10:     wiPC <= wBranchPC;											// jal
+			2'b11:     wiPC <= (wRead1+wImmediate) & ~(32'h000000001);	// jalr
+			default:	  wiPC <= ZERO;
+		endcase
+	end	
+ 
 `ifdef RV32IMF
 wire [31:0] wOrigAFPALU;
 always @(*)
