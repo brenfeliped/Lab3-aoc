@@ -174,7 +174,7 @@ SetHandlerException: #seta o tratador de excessões
   
 TratarCaso: #rotina de tratamento de casos
   jal PLOTFRAMERROR
-  csrrw a0, 0, zero # faz a leitura do usecase
+  csrrw a0, 66, zero # faz a leitura do usecase
   #identifica os casos de erro
   addi t0, zero, 0 #caso 0
   beq a0, t0, CASO0
