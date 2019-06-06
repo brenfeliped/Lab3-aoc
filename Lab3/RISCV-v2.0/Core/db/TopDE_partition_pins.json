@@ -20,23 +20,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "BR_Leitura2[4]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[5]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[6]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[7]",
-					"strict" : false
-				},
-				{
 					"name" : "HEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[26]",
 					"strict" : false
 				},
 				{
@@ -53,6 +45,14 @@
 				},
 				{
 					"name" : "Saida_ULA[30]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[25]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[26]",
 					"strict" : false
 				},
 				{
@@ -220,6 +220,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "Saida_ULA[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[18]",
+					"strict" : false
+				},
+				{
 					"name" : "Saida_ULA[19]",
 					"strict" : false
 				},
@@ -244,11 +252,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[25]",
+					"name" : "MemD_Endereco[17]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[26]",
+					"name" : "MemD_Endereco[18]",
 					"strict" : false
 				},
 				{
@@ -276,35 +284,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "MemD_Endereco[25]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[26]",
-					"strict" : false
-				},
-				{
 					"name" : "Saida_ULA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[15]",
-					"strict" : false
-				},
-				{
 					"name" : "MemD_Endereco[0]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[1]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[15]",
 					"strict" : false
 				},
 				{
@@ -964,27 +948,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "Saida_ULA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[15]",
+					"strict" : false
+				},
+				{
 					"name" : "Saida_ULA[16]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[17]",
+					"name" : "MemD_Endereco[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[18]",
+					"name" : "MemD_Endereco[15]",
 					"strict" : false
 				},
 				{
 					"name" : "MemD_Endereco[16]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[17]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[18]",
 					"strict" : false
 				},
 				{
@@ -1525,6 +1509,22 @@
 				},
 				{
 					"name" : "BR_Leitura1[31]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[7]",
 					"strict" : false
 				},
 				{

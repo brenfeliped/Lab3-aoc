@@ -86,8 +86,8 @@ begin
 			end
 		OPC_CSR:
 			begin
-			//oOrigAULA  	<= 1'b0; dont care
-			//oOrigBULA 	<= 1'b0; dont care
+			oOrigAULA  	<= 1'b0; 
+			oOrigBULA 	<= 1'b0; 
 			//oRegWrite	<= 1'b0; depende de cada instrucao
 			oMemWrite	<= 1'b0; 
 			oMemRead 	<= 1'b0; 
