@@ -15,6 +15,15 @@
 # Matheus Breder Branquinho Nogueira - 17/0018997
 #
 
+# v2.0 2019/1 by
+# Anne Carolina B. G. Gomes – 140016546
+# Breno Felipe Nunes Gomes – 160003318
+# Christian Braga de Almeida Pires – 120028379
+# Otávio Souza de Oliveira – 150143401
+# Renan Godoi de Medeiros – 150146612
+# Saulo Mendes Feitosa – 160144884
+
+
 #definicao do mapa de enderecamento de MMIO
 .eqv VGAADDRESSINI0     0xFF000000
 .eqv VGAADDRESSFIM0     0xFF012C00
@@ -64,7 +73,17 @@
 
 
 .data
-# UTVEC e UEPC Enquanto nao tem o sistema de gerenciamento de interrupcao e excecao
+#tratamento de erros
+Pcstr: .string "PC:"
+erro0:   .string "Error: 0 Instruction address misaligned"
+erro1:   .string "Error: 1 Instruction access fault"
+erro2:   .string "Error: 2 Ilegal Instruction"
+erro4:   .string "Error: 4 Load address misaligned"
+erro5:   .string "Error: 5 Load access fault"
+erro6:   .string "Error: 6 Store address misaligned"
+erro7:   .string "Error: 7 Store access fault"
+erro8:   .string "Error: 8 environment call"
+
 UEPC:	.word 0x00000000
 UTVEC:	.word 0x00000000
 
@@ -146,6 +165,122 @@ NumNaN:			.string "NaN"
 .text
 
 ###### Devem ser colocadas aqui as identificações das interrupções e exceções
+
+SetHandlerException: #seta o tratador de excessões
+  la t0, HandlerError
+  csrrw zero, 5, t0 # coloca em utvec(5) o endereço de HandlerError
+  csrrsi zero, 0, 1 # seta o bit de interrupção ativado em ustatus (0)
+  ret
+  
+TratarCaso: #rotina de tratamento de casos
+  jal PLOTFRAMERROR
+  csrrw a0, 0, zero # faz a leitura do usecase
+  #identifica os casos de erro
+  addi t0, zero, 0 #caso 0
+  beq a0, t0, CASO0
+  
+  addi t0, zero, 1 #caso 1
+  beq a0, t0, CASO1
+  
+  addi t0, zero, 2 #caso 2
+  beq a0, t0, CASO2
+  
+  addi t0, zero, 4 #caso 4
+  beq a0, t0, CASO4
+  
+  addi t0, zero, 5 #caso 5
+  beq a0, t0, CASO5
+  
+  addi t0, zero, 6 #caso 6
+  beq a0, t0, CASO6
+  
+  addi t0, zero, 7 #caso 7
+  beq a0, t0, CASO7
+  
+  addi t0, zero, 8 #caso 8
+  beq a0, t0, CASO8
+
+CASO0:
+  la a0, erro0
+  jal PRINTERROR
+  j EXIT_Trat #finaliza o programa ao terminar o print
+  
+CASO1:
+  la a0, erro1
+  jal PRINTERROR
+  j EXIT_Trat #finaliza o programa ao terminar o print
+  
+CASO2:
+  la a0, erro2
+  jal PRINTERROR
+  j EXIT_Trat
+  
+CASO4:
+  la a0, erro4
+  jal PRINTERROR
+  j EXIT_Trat
+  
+CASO5:
+  la a0, erro5
+  jal PRINTERROR
+  j EXIT_Trat
+  
+CASO6:
+  la a0, erro6
+  jal PRINTERROR
+  j EXIT_Trat
+  
+CASO7:
+  la a0, erro7
+  jal PRINTERROR
+  j EXIT_Trat
+  
+CASO8:
+  la a0, erro8
+  jal PRINTERROR
+  j EXIT_Trat
+  
+PRINTERROR:
+  M_SetEcall(exceptionHandling)	
+  li a7, 104 #print string
+  li a1, 0
+  li a2, 0
+  li a3, 0xD0FF
+  li a4, 0
+  M_Ecall
+  la a0, Pcstr #carrega a string pc
+  li a1, 0 #imprime a baixo da execeção
+  li a2, 9
+  M_Ecall
+  add a0, zero, s0 #printa o pc na tela do registrador salvo
+  li a7, 134 #print hex
+  li a1, 23
+  li a2, 9
+  li a3, 0xD0FF
+  li a4, 0
+  M_Ecall
+  ret
+
+PLOTFRAMERROR:
+  li a0,0xFF000000  # endereco inicial da Memoria VGA
+  li a1,0xFF012C00  # endereco final
+  li a2,0xD0D0D0D0  #cor do plano de fundo
+PLOTERROR:    
+  sw a2, 0(a0) #escreve a cor na memoria
+  addi a0, a0, 4 #incrementa 4 ao endereco
+  bne a0,a1,PLOTERROR #Se nao for o ultimo endereco entao continua o loop
+  ret #caso contrario retorna para o chamador
+
+HandlerError: # Ignora a instrução e faz um jump no tratador de excessões
+  csrrw s0, 65, zero #faz a leitura de uepc e salva em s0
+  la t0, TratarCaso #carrega o endereço do tratador de casos no pc
+  csrrw zero, 65, t0 #joga no uepc o endereço do tratador
+  uret #retorna para o endereço gravado em uepc
+
+EXIT_Trat: #finaliza o tratamento
+  li a7, 10
+  ecall
+
 exceptionHandling:  j ecallException		# Por enquanto somente a exceção de ecall
 	
 endException:  	csrrw tp, 65, zero	# le o valor de EPC salvo no registrador uepc (reg 65)
