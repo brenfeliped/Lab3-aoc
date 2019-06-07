@@ -3,7 +3,7 @@
 .text
 jal SetHandlerException
 
-la t1, #teste trigger para teste 2
+la t1,teste #teste trigger para teste 2
 li t2, 0xFFFFFF
 sw t2, 0(t1)
 teste:
