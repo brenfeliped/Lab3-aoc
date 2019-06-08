@@ -76,7 +76,8 @@ module Datapath_UNI (
 	 output wire oExceptionStore,
 	 output wire oExceptionLoad,
 	 output wire oOutText,
-    output wire oOutData
+    output wire oOutData,
+	 output wire oPcMisaligned
 );
 
 
@@ -92,7 +93,7 @@ assign mRead1				= wRead1;
 assign mRead2				= wRead2;
 assign mRegWrite			= wRegWrite;
 assign mULA					= wALUresult;
-assign mDebug				=  wCUcause; //32'h000ACE10;	// Ligar onde for preciso	
+assign mDebug				=  {26'b0,wCUcause[3:0],oOutText,oOutData}; //32'h000ACE10;	// Ligar onde for preciso	
 assign wRegDispSelect 	= mRegDispSelect;
 assign wVGASelect 		= mVGASelect;
 assign mRegDisp			= wRegDisp;
@@ -301,24 +302,33 @@ BranchControl BC0 (
 
 
 always @(*)
-if(IwAddress< BEGINNING_TEXT | IwAddress > END_TEXT)
+if(mPC[0] || mPC[1])
 begin
-     oOutText <= 1'b1;
+	oPcMisaligned = 1'b1;
 end
 else
 begin
-	oOutText <= 1'b0;
+	oPcMisaligned = 1'b0;
+end
+always @(*)
+if(IwAddress >= BEGINNING_TEXT && IwAddress <= END_TEXT)
+begin
+     oOutText <= 1'b0;
+end
+else
+begin
+	oOutText <= 1'b1;
 end
 
 
 always @(*)
-if(wALUresult < BEGINNING_DATA | wALUresult > END_DATA)
+if(wALUresult >= BEGINNING_DATA && wALUresult <= END_DATA)
 begin
-	oOutData <= 1'b1;
+	oOutData <= 1'b0;
 end
 else
 begin
-	oOutData <= 1'b0;
+	oOutData <= 1'b1;
 end
 // ******************************************************
 // multiplexadores

@@ -79,7 +79,7 @@ wire			 wCMemWrite;
 wire			 wCMemRead;
 wire         wCPcOrUtvec;  // *add to csr resgisters* 
 wire         wCCSRWrite;   // *add to csr resgisters* 
-wire         wCUcause;     // *add to csr resgisters*
+wire [31:0]  wCUcause;     // *add to csr resgisters*
 wire         wCSelectNumRegCSR; // *add to csr resgisters*
 wire  [2:0]  wCOrigWriteDataCSR; // *add to csr resgisters*
 wire [ 1:0]	 wCMem2Reg; 
@@ -100,9 +100,9 @@ wire 			 wCFPstart;
 	.iInstr(wInstr),
    .iExceptionLoad(wExceptionLoad),
    .iExceptionStore(wExceptionStore),
-   .iPcMisaligned(wPcMisaligned),
    .iOutText(wOutText),
 	.iOutData(wOutData),
+	.iPcMisaligned(wPcMisaligned),
    .oOrigAULA(wCOrigAULA), 
 	.oOrigBULA(wCOrigBULA), 
 	.oRegWrite(wCRegWrite), 
@@ -138,7 +138,7 @@ wire         wOutData;
 wire [31:0]  wInstr;
 wire  wExceptionStore;
 wire  wExceptionLoad;
-wire  wPcMisaligned = mPC[0] | mPC[1];
+wire  wPcMisaligned;
 Datapath_UNI DATAPATH0 (
     .iCLK(iCLK),
     .iCLK50(iCLK50),
@@ -212,7 +212,8 @@ Datapath_UNI DATAPATH0 (
 	 .oExceptionStore(wExceptionStore),
 	 .oExceptionLoad(wExceptionLoad),
 	 .oOutText(wOutText),
-	 .oOutData(wOutData)
+	 .oOutData(wOutData),
+	 .oPcMisaligned(wPcMisaligned)
 );
  `endif
 

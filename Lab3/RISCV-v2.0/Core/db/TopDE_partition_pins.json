@@ -4,219 +4,71 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "BR_Leitura2[0]",
+					"name" : "Saida_ULA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "BR_Leitura2[1]",
+					"name" : "Saida_ULA[1]",
 					"strict" : false
 				},
 				{
-					"name" : "BR_Leitura2[2]",
+					"name" : "Saida_ULA[2]",
 					"strict" : false
 				},
 				{
-					"name" : "BR_Leitura2[3]",
+					"name" : "Saida_ULA[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX0[0]",
+					"name" : "Saida_ULA[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[25]",
+					"name" : "Saida_ULA[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[26]",
+					"name" : "Saida_ULA[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[27]",
+					"name" : "Saida_ULA[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[28]",
+					"name" : "Saida_ULA[8]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[29]",
+					"name" : "Saida_ULA[9]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[30]",
+					"name" : "Saida_ULA[10]",
 					"strict" : false
 				},
 				{
-					"name" : "MemD_Endereco[25]",
+					"name" : "Saida_ULA[11]",
 					"strict" : false
 				},
 				{
-					"name" : "MemD_Endereco[26]",
+					"name" : "Saida_ULA[12]",
 					"strict" : false
 				},
 				{
-					"name" : "MemD_Endereco[27]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[28]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[29]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[30]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "LEDR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[0]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[1]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[2]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[3]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[4]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[5]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[6]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[7]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[8]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[9]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[10]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[11]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[12]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[13]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[14]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[15]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[16]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[17]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[18]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[19]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[20]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[21]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[22]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[23]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[24]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[25]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[26]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[27]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[28]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[29]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[30]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_DadoLeitura[31]",
-					"strict" : false
-				},
-				{
-					"name" : "Debug[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Uniao[2]",
+					"name" : "Saida_ULA[13]",
 					"strict" : false
 				},
 				{
 					"name" : "Saida_ULA[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[16]",
 					"strict" : false
 				},
 				{
@@ -252,6 +104,102 @@
 					"strict" : false
 				},
 				{
+					"name" : "Saida_ULA[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_ULA[31]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[8]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[9]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[10]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[11]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[12]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[13]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[14]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[15]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_Endereco[16]",
+					"strict" : false
+				},
+				{
 					"name" : "MemD_Endereco[17]",
 					"strict" : false
 				},
@@ -284,147 +232,531 @@
 					"strict" : false
 				},
 				{
-					"name" : "Saida_ULA[0]",
+					"name" : "MemD_Endereco[25]",
 					"strict" : false
 				},
 				{
-					"name" : "MemD_Endereco[0]",
+					"name" : "MemD_Endereco[26]",
 					"strict" : false
 				},
 				{
-					"name" : "Uniao[0]",
+					"name" : "MemD_Endereco[27]",
 					"strict" : false
 				},
 				{
-					"name" : "Uniao[1]",
+					"name" : "MemD_Endereco[28]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[0]",
+					"name" : "MemD_Endereco[29]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[1]",
+					"name" : "MemD_Endereco[30]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[2]",
+					"name" : "MemD_Endereco[31]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[3]",
+					"name" : "BR_Leitura1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[4]",
+					"name" : "BR_Leitura1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[5]",
+					"name" : "BR_Leitura1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[6]",
+					"name" : "BR_Leitura1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[7]",
+					"name" : "BR_Leitura1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[8]",
+					"name" : "BR_Leitura1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[9]",
+					"name" : "BR_Leitura1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[10]",
+					"name" : "BR_Leitura1[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[11]",
+					"name" : "BR_Leitura1[8]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[12]",
+					"name" : "BR_Leitura1[9]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[13]",
+					"name" : "BR_Leitura1[10]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[14]",
+					"name" : "BR_Leitura1[11]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[15]",
+					"name" : "BR_Leitura1[12]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[16]",
+					"name" : "BR_Leitura1[13]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[17]",
+					"name" : "BR_Leitura1[14]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[18]",
+					"name" : "BR_Leitura1[15]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[19]",
+					"name" : "BR_Leitura1[16]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[20]",
+					"name" : "BR_Leitura1[17]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[21]",
+					"name" : "BR_Leitura1[18]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[22]",
+					"name" : "BR_Leitura1[19]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[23]",
+					"name" : "BR_Leitura1[20]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[24]",
+					"name" : "BR_Leitura1[21]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[25]",
+					"name" : "BR_Leitura1[22]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[26]",
+					"name" : "BR_Leitura1[23]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[27]",
+					"name" : "BR_Leitura1[24]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[28]",
+					"name" : "BR_Leitura1[25]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[29]",
+					"name" : "BR_Leitura1[26]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[30]",
+					"name" : "BR_Leitura1[27]",
 					"strict" : false
 				},
 				{
-					"name" : "Saida_FPULA[31]",
+					"name" : "BR_Leitura1[28]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[12]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[13]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[14]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[15]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[16]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[17]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[18]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[19]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[20]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[21]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[22]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[23]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[24]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[25]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[26]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[27]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[28]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[29]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[30]",
+					"strict" : false
+				},
+				{
+					"name" : "BR_Leitura2[31]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[0]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[2]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[3]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[4]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[5]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[7]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[8]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[9]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[10]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[11]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[12]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[13]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[14]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[15]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[16]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[17]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[18]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[19]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[20]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[21]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[22]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[23]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[24]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[25]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[26]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[27]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[28]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[29]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[30]",
+					"strict" : false
+				},
+				{
+					"name" : "RegDisp[31]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[0]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[1]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[2]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[3]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[4]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[5]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[6]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[7]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[8]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[9]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[10]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[11]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[12]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[13]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[14]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[15]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[16]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[17]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[18]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[19]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[20]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[21]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[22]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[23]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[24]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[25]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[26]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[27]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[28]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[29]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[30]",
+					"strict" : false
+				},
+				{
+					"name" : "FRegDisp[31]",
 					"strict" : false
 				},
 				{
@@ -780,143 +1112,283 @@
 					"strict" : false
 				},
 				{
-					"name" : "Entrada1_FPULA[24]",
+					"name" : "Instrucao[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada1_FPULA[25]",
+					"name" : "Instrucao[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada1_FPULA[26]",
+					"name" : "Instrucao[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada1_FPULA[27]",
+					"name" : "Instrucao[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada1_FPULA[28]",
+					"name" : "Instrucao[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada1_FPULA[29]",
+					"name" : "Instrucao[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada1_FPULA[30]",
+					"name" : "Instrucao[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada1_FPULA[31]",
+					"name" : "Instrucao[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[0]",
+					"name" : "Instrucao[8]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[1]",
+					"name" : "Instrucao[9]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[2]",
+					"name" : "Instrucao[10]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[3]",
+					"name" : "Instrucao[11]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[4]",
+					"name" : "Instrucao[12]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[5]",
+					"name" : "Instrucao[13]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[6]",
+					"name" : "Instrucao[14]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[7]",
+					"name" : "Instrucao[15]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[8]",
+					"name" : "Instrucao[16]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[9]",
+					"name" : "Instrucao[17]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[10]",
+					"name" : "Instrucao[18]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[11]",
+					"name" : "Instrucao[19]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[12]",
+					"name" : "Instrucao[20]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[13]",
+					"name" : "Instrucao[21]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[14]",
+					"name" : "Instrucao[22]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[15]",
+					"name" : "Instrucao[23]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[16]",
+					"name" : "Instrucao[24]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[17]",
+					"name" : "Instrucao[25]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[18]",
+					"name" : "Instrucao[26]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[19]",
+					"name" : "Instrucao[27]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[20]",
+					"name" : "Instrucao[28]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[21]",
+					"name" : "Instrucao[29]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[22]",
+					"name" : "Instrucao[30]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[23]",
+					"name" : "Instrucao[31]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[24]",
+					"name" : "Escreve_FReg",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[25]",
+					"name" : "LEDR[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Entrada_FRegister[26]",
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[1]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[2]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[3]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[4]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[5]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[6]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[7]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[8]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[9]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[10]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[11]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[12]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[13]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[14]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[15]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[16]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[17]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[18]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[19]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[20]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[21]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[22]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[23]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[24]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[25]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[26]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[27]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[28]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[29]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[30]",
+					"strict" : false
+				},
+				{
+					"name" : "MemD_DadoLeitura[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Uniao[2]",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_I2C_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
 					"strict" : false
 				},
 				{
@@ -940,47 +1412,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "FPGA_I2C_SCLK",
+					"name" : "AUD_DACDAT",
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[15]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[16]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[1]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[15]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[16]",
-					"strict" : false
-				},
-				{
-					"name" : "Escreve_FReg",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[31]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[31]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
@@ -1384,122 +1820,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "BR_Leitura1[0]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[2]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[3]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[4]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[5]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[6]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[7]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[8]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[9]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[10]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[11]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[12]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[13]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[14]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[15]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[16]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura1[28]",
-					"strict" : false
-				},
-				{
 					"name" : "BR_Leitura1[29]",
 					"strict" : false
 				},
@@ -1509,118 +1829,6 @@
 				},
 				{
 					"name" : "BR_Leitura1[31]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[4]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[5]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[6]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[7]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[8]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[9]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[10]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[11]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[12]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[13]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[14]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[15]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[16]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[30]",
-					"strict" : false
-				},
-				{
-					"name" : "BR_Leitura2[31]",
 					"strict" : false
 				},
 				{
@@ -1749,362 +1957,6 @@
 				},
 				{
 					"name" : "BR_Escrita[31]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[2]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[4]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[5]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[6]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[7]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[8]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[9]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[10]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[11]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[12]",
-					"strict" : false
-				},
-				{
-					"name" : "Saida_ULA[13]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[0]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[1]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[2]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[3]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[4]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[5]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[6]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[7]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[8]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[9]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[10]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[11]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[12]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[13]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[14]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[15]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[16]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[17]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[18]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[19]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[20]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[21]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[22]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[23]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[24]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[25]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[26]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[27]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[28]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[29]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[30]",
-					"strict" : false
-				},
-				{
-					"name" : "RegDisp[31]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[0]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[1]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[2]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[3]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[4]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[5]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[6]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[7]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[8]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[9]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[10]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[11]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[12]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[13]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[14]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[15]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[16]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[17]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[18]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[19]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[20]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[21]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[22]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[23]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[24]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[25]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[26]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[27]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[28]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[29]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[30]",
-					"strict" : false
-				},
-				{
-					"name" : "FRegDisp[31]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[2]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[3]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[4]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[5]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[6]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[7]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[8]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[9]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[10]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[11]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[12]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[13]",
-					"strict" : false
-				},
-				{
-					"name" : "MemD_Endereco[14]",
 					"strict" : false
 				},
 				{
@@ -2252,135 +2104,303 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_DACDAT",
+					"name" : "Debug[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[0]",
+					"name" : "Debug[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[1]",
+					"name" : "Debug[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[2]",
+					"name" : "Debug[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[3]",
+					"name" : "Debug[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[4]",
+					"name" : "Debug[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[5]",
+					"name" : "Uniao[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[6]",
+					"name" : "Uniao[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[7]",
+					"name" : "Saida_FPULA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[8]",
+					"name" : "Saida_FPULA[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[9]",
+					"name" : "Saida_FPULA[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[10]",
+					"name" : "Saida_FPULA[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[11]",
+					"name" : "Saida_FPULA[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[12]",
+					"name" : "Saida_FPULA[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[13]",
+					"name" : "Saida_FPULA[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[14]",
+					"name" : "Saida_FPULA[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[15]",
+					"name" : "Saida_FPULA[8]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[16]",
+					"name" : "Saida_FPULA[9]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[17]",
+					"name" : "Saida_FPULA[10]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[18]",
+					"name" : "Saida_FPULA[11]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[19]",
+					"name" : "Saida_FPULA[12]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[20]",
+					"name" : "Saida_FPULA[13]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[21]",
+					"name" : "Saida_FPULA[14]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[22]",
+					"name" : "Saida_FPULA[15]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[23]",
+					"name" : "Saida_FPULA[16]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[24]",
+					"name" : "Saida_FPULA[17]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[25]",
+					"name" : "Saida_FPULA[18]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[26]",
+					"name" : "Saida_FPULA[19]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[27]",
+					"name" : "Saida_FPULA[20]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[28]",
+					"name" : "Saida_FPULA[21]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[29]",
+					"name" : "Saida_FPULA[22]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[30]",
+					"name" : "Saida_FPULA[23]",
 					"strict" : false
 				},
 				{
-					"name" : "Instrucao[31]",
+					"name" : "Saida_FPULA[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_FPULA[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_FPULA[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_FPULA[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_FPULA[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_FPULA[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_FPULA[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Saida_FPULA[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada1_FPULA[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada1_FPULA[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada1_FPULA[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada1_FPULA[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada1_FPULA[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada1_FPULA[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada1_FPULA[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada1_FPULA[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Entrada_FRegister[26]",
 					"strict" : false
 				},
 				{
@@ -2416,19 +2436,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[9]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[8]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[7]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[6]",
+					"name" : "RegDispSelect[4]",
 					"strict" : false
 				},
 				{
@@ -2448,7 +2456,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "RegDispSelect[4]",
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
 					"strict" : false
 				},
 				{
@@ -2492,11 +2512,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_ADCDAT",
+					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[5]",
+					"name" : "AUD_ADCDAT",
 					"strict" : false
 				}
 			]
